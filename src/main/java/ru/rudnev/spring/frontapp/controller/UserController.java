@@ -67,7 +67,7 @@ public class UserController {
         try {
             userService.deleteUser(id);
 
-            redirectAttributes.addFlashAttribute("message", "The Tutorial with id=" + id + " has been deleted successfully!");
+            redirectAttributes.addFlashAttribute("message", "The User with id=" + id + " has been deleted successfully!");
         }
         catch (Exception e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());
