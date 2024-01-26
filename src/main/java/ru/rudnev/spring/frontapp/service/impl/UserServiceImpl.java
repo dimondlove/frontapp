@@ -24,4 +24,24 @@ public class UserServiceImpl implements UserService {
                 .map(mappingUtils::mapToUserResponseDto)
                 .toList();
     }
+
+    @Override
+    public User addUser() {
+        return new User();
+    }
+
+    @Override
+    public void saveUser(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
+    public User editUser(int id) {
+        return userRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        userRepository.deleteById(id);
+    }
 }
